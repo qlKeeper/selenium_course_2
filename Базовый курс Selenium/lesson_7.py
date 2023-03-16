@@ -1,4 +1,4 @@
-# Негативное тестирование
+# Обновление страницы
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -26,5 +26,6 @@ warning_text = driver.find_element(By.XPATH, "//h3[@data-test='error']").text
 assert warning_text == "Epic sadface: Username and password do not match any \
 user in this service"
 
+driver.refresh()
 time.sleep(2)
 driver.quit()
