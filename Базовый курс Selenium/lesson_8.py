@@ -37,8 +37,8 @@ with webdriver.Chrome() as driver:
     filter.click()
     print("Click filter")
     time.sleep(1)
-    filter.send_keys(Keys.DOWN)
+    filter.send_keys(Keys.DOWN) # Нажатие клавиши DOWN
     time.sleep(1)
-    filter.send_keys(Keys.RETURN)
+    filter.send_keys(Keys.ENTER) # Нажатие клавиши Enter
 
     time.sleep(2)
