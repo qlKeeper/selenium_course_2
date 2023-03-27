@@ -7,8 +7,6 @@ import time
 driver = webdriver.Chrome()
 driver.get("https://www.saucedemo.com/")
 driver.maximize_window()
-# user_name_form = driver.find_element(By.ID, "user-name") # ID
-# user_name_form = driver.find_element(By.NAME, "user-name") # NAME
 user_name_form = driver.find_element(By.XPATH, "//*[@id='user-name']") # XPATH
 user_name_form.send_keys("standard_user")
 password_form = driver.find_element(By.CSS_SELECTOR, "input[name=password]")
