@@ -92,6 +92,9 @@ with webdriver.Chrome() as driver: #  Инициализация драйвер�
     price_product_2 = float(price_product_2.replace('$', ''))
     
     assert total_price == price_product_1 + price_product_2, "Bug total price"
+    driver.find_element(By.ID, "finish").click()
+    Complete_order = driver.find_element(By.CLASS_NAME, "complete-header").text
+    assert Complete_order == "Thank you for your order!", "Complete error"
     print("All good, test is done")
     
     time.sleep(2)
