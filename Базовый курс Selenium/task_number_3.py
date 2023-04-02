@@ -47,6 +47,7 @@ with webdriver.Chrome() as driver:
     driver.find_element(By.ID, "continue").click()
     print("Filling in the fields done\n")
     
+    # Финальная проверка заказа
     final_name = driver.find_element(By.CLASS_NAME, "inventory_item_name").text
     final_price = driver.find_element(By.CLASS_NAME, "inventory_item_price").text
     assert final_price == product_price, "Bug final price"
