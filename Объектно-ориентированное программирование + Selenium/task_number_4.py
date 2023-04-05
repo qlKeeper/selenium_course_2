@@ -23,12 +23,14 @@ class LoginPage:
             self.driver.find_element(By.ID, "login-button").click()
             time.sleep(1)
             try:
+                # Проверка успешной авторизации пользователся с задержкой 6 сек
+                # сверка текста title Product 
                 WebDriverWait(self.driver, 6).until(EC.text_to_be_present_in_element(
                     (By.XPATH, "//span[@class='title']"), 'Products'))
-                print(f"[{user}] was able to log in")
-                self.driver.back()
+                print(f"[{user}] was able to log in") # Пользователь успешно авториз
+                self.driver.back() # Возврат на страницу авторизации
             except Exception:
-                print(f"Error, [{user}] unable to login")
+                print(f"Error, [{user}] unable to login") # Неактивный пользователь
 
 
 class Test1:
@@ -38,13 +40,14 @@ class Test1:
         driver.maximize_window()
         driver.get("https://www.saucedemo.com/")
         users = ['standard_user', 'locked_out_user', 
-                'problem_user', 'performance_glitch_user']
-        password_all_users = 'secret_sauce'
+                'problem_user', 'performance_glitch_user']  # Список пользователей
+        password_all_users = 'secret_sauce'  # Пароль для пользователей
         print("Start test")
 
         login = LoginPage(driver)
         login.check_users(users, password_all_users)
         time.sleep(2)
+        print("Test complite")
         driver.quit()
 
 
