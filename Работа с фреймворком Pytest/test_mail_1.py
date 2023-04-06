@@ -1,3 +1,5 @@
+#  Создание проекта и импортирование библиотеки Pytest
+
 import pytest
 
 @pytest.fixture()
